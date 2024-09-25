@@ -59,19 +59,12 @@
         .circle1 { width: 150px; height: 150px; top: 10%; left: 10%; }
         .circle2 { width: 200px; height: 200px; top: 60%; left: 20%; }
         .circle3 { width: 100px; height: 100px; top: 50%; left: 80%; }
-        
+
         @keyframes move {
             0% { transform: translate(0, 0); }
             50% { transform: translate(50px, 50px); }
             100% { transform: translate(0, 0); }
         }
-
-        /* Color-changing circles */
-        .color-change {
-            animation: colorChange 10s infinite;
-        }
-
-       
 
         #prophet-list {
             display: none;
@@ -113,9 +106,9 @@
 
     <!-- Animated circles background -->
     <div class="circle-bg circle1"></div>
-    <div class="circle-bg circle2 color-change"></div>
+    <div class="circle-bg circle2"></div>
     <div class="circle-bg circle3"></div>
-    
+
     <!-- Main Content -->
     <h1>Discover the History of Prophets in Islam</h1>
     <button id="start-button">Start</button>
@@ -148,54 +141,24 @@
             prophetList.style.display = 'block';
         });
 
-        // Prophet data with 1000+ words for each prophet
+        // Prophet data
         const prophets = {
-            adam: `<h2>Prophet Adam</h2>
-                <p>Prophet Adam (AS) is regarded as the first human being and the first prophet in Islam. According to Islamic teachings, Adam was created by Allah from clay, and with his creation, the foundation of human civilization was laid. Adam was made the vicegerent (khalifa) of the earth, and Allah commanded the angels to bow before him as a sign of respect and acknowledgment of his unique status. However, Iblis (Satan), out of arrogance and pride, refused and was cast out of heaven as a result.</p>
-                <p>Adam lived in paradise with his wife, Hawwa (Eve), and they were given everything they needed. Allah commanded them to enjoy the fruits of paradise but forbade them from approaching a particular tree. Despite the warning, Satan deceived them, and they ate from the forbidden tree. As a result, they were sent down to earth to live as mortals.</p>
-                <p>Adam repented for his disobedience, and Allah forgave him, teaching the importance of repentance and mercy in Islam. Adam and his descendants were entrusted with the responsibility of worshiping Allah and following His guidance. Adam's story is a powerful reminder of human nature, free will, and the eternal struggle between good and evil.</p>
-                <p>Adam had several children, and through them, the human race spread across the world. His sons included Cain (Qabil) and Abel (Habil), whose story is one of the first moral lessons in human history about jealousy, justice, and the consequences of wrongdoing. Adam's life and teachings continue to be a cornerstone of Islamic belief, as his story is recounted in the Quran and the Hadith. He is considered the father of all humanity, and his legacy lives on through his descendants.</p>
-                <p>Throughout his life, Adam preached the message of monotheism, calling people to worship Allah alone and warning them against the tricks of Satan. He taught his children about the existence of Allah, the importance of good deeds, and the consequences of turning away from divine guidance. Adam's life and story are central to the Islamic understanding of human nature, morality, and the relationship between mankind and Allah.</p>`,
-            
-            ibrahim: `<h2>Prophet Ibrahim</h2>
-                <p>Prophet Ibrahim (AS), known as Abraham in the Judeo-Christian tradition, is one of the most revered prophets in Islam. Ibrahim is referred to as the "Friend of Allah" (Khalilullah) and is central to the development of monotheistic faiths. His life is a testament to unwavering faith, sacrifice, and submission to the will of Allah.</p>
-                <p>Born into a society steeped in idolatry, Ibrahim rejected the worship of idols from a young age. He questioned his people’s practice of idol worship and sought the truth about the creator of the universe. Through his reflection and observation of the natural world, Ibrahim came to the conclusion that there is only one God, Allah, who created everything. His belief in monotheism brought him into conflict with his father, Azar, and his community.</p>
-                <p>Despite the hostility he faced, Ibrahim continued to preach the message of Allah. His greatest test came when Allah commanded him to sacrifice his son, Ismail (Ishmael). Ibrahim's absolute submission to Allah was demonstrated when he prepared to carry out the command without hesitation. However, Allah, in His mercy, replaced Ismail with a ram, symbolizing that Ibrahim had passed the test of obedience. This act is commemorated every year during the Islamic festival of Eid al-Adha.</p>
-                <p>Ibrahim's story is also closely associated with the construction of the Kaaba, the sacred house of worship in Mecca. Along with his son Ismail, Ibrahim rebuilt the Kaaba as a center of monotheistic worship. Muslims around the world face the Kaaba when offering their prayers, and the rites of Hajj are deeply connected to Ibrahim's life and legacy.</p>
-                <p>Prophet Ibrahim's unwavering faith, commitment to the oneness of Allah, and his willingness to sacrifice everything for the sake of Allah make him a model for Muslims. His life and teachings are central to Islamic belief, and he is revered as one of the greatest prophets in Islam.</p>`,
-
-            musa: `<h2>Prophet Musa</h2>
-                <p>Prophet Musa (AS), known as Moses in the Judeo-Christian tradition, is one of the most significant prophets in Islam. He is mentioned more times in the Quran than any other prophet and is revered for his leadership, guidance, and his role in liberating the Israelites from the oppression of Pharaoh.</p>
-                <p>Musa was born into a time of great hardship for the Israelites, who were enslaved by Pharaoh in Egypt. Fearing a prophecy that a child from the Israelites would overthrow him, Pharaoh ordered the killing of all newborn Israelite boys. To save Musa, his mother placed him in a basket and set him afloat on the Nile River. He was found by Pharaoh’s wife, Asiya, who adopted him as her own son.</p>
-                <p>Musa grew up in Pharaoh’s palace but eventually learned of his true origins. After accidentally killing an Egyptian in defense of an Israelite, Musa fled Egypt and lived in exile in Midian, where he married and started a new life. It was during this time that Allah spoke to Musa at the burning bush and commanded him to return to Egypt and lead the Israelites to freedom.</p>
-                <p>With the help of his brother, Harun (Aaron), Musa confronted Pharaoh and demanded the release of the Israelites. When Pharaoh refused, Allah sent a series of plagues upon Egypt as a sign of His power. Eventually, Musa led the Israelites out of Egypt, parting the Red Sea by the command of Allah. Pharaoh and his army were drowned as they pursued Musa and his people.</p>
-                <p>After their liberation, Musa received the Torah (Tawrat) from Allah on Mount Sinai, where he was given divine guidance for the Israelites. However, Musa faced many challenges as he led his people through the desert, including their disobedience and lack of faith. Despite these difficulties, Musa remained steadfast in his mission and continued to call his people to the worship of Allah alone.</p>
-                <p>Musa's life and teachings are central to the Islamic understanding of prophethood, leadership, and the struggle for justice. His story is a source of inspiration for Muslims, as it demonstrates the importance of faith, perseverance, and reliance on Allah in the face of adversity.</p>`,
-
-            isa: `<h2>Prophet Isa</h2>
-                <p>Prophet Isa (AS), known as Jesus in the Christian tradition, is revered in Islam as one of the greatest prophets and messengers of Allah. Muslims believe that Isa was born to the Virgin Maryam (Mary) through a miraculous birth, without a father. His birth was a sign of Allah’s power and mercy, and he was sent to guide the Children of Israel with divine revelations.</p>
-                <p>From a young age, Isa demonstrated signs of his prophethood. He performed many miracles by the will of Allah, including healing the sick, restoring sight to the blind, and even bringing the dead back to life. These miracles were a testament to his status as a prophet and served as evidence of Allah’s power.</p>
-                <p>Isa's message was one of monotheism, calling people to worship Allah alone and to follow the guidance of the Torah. However, his teachings were met with resistance from the religious leaders of the time, who saw him as a threat to their authority. Despite the opposition he faced, Isa continued to preach the message of Allah fearlessly.</p>
-                <p>Muslims believe that Isa was not crucified, as is commonly believed in the Christian tradition. Instead, Allah saved him from crucifixion and raised him up to heaven. Isa’s return to earth is a central belief in Islamic eschatology, as Muslims believe that he will return before the Day of Judgment to restore justice and defeat the false messiah (the Antichrist).</p>
-                <p>Prophet Isa’s life is a powerful example of devotion, humility, and submission to the will of Allah. His teachings continue to resonate with Muslims, who honor him as a beloved prophet and messenger of Allah.</p>`,
-
-            muhammad: `<h2>Prophet Muhammad</h2>
-                <p>Prophet Muhammad (SAW) is the final messenger of Allah and the seal of the prophets. Born in the city of Mecca in 570 CE, Muhammad was a member of the Quraysh tribe. From a young age, he was known for his honesty, integrity, and trustworthiness, earning him the title "Al-Amin" (The Trustworthy).</p>
-                <p>At the age of 40, Muhammad received his first revelation from Allah through the angel Jibril (Gabriel) while meditating in the cave of Hira. This marked the beginning of his prophethood and the revelation of the Quran, the final and complete guidance for humanity. Over the next 23 years, Muhammad continued to receive revelations from Allah, which were compiled into the Quran.</p>
-                <p>Muhammad’s mission was to call people to the worship of Allah alone and to reject the idolatry and corruption that had become prevalent in Mecca. Despite facing fierce opposition from the Quraysh and enduring years of persecution, Muhammad remained steadfast in his message. His followers, known as Muslims, grew in number, and eventually, Muhammad and his companions were forced to migrate to the city of Medina, an event known as the Hijra.</p>
-                <p>In Medina, Muhammad established a thriving Muslim community and became both a spiritual and political leader. He implemented Islamic laws, promoted justice, and built strong alliances with various tribes. Over time, Islam spread throughout the Arabian Peninsula, and Mecca was eventually conquered peacefully by the Muslims.</p>
-                <p>Prophet Muhammad’s life is a model for all Muslims. His character, teachings, and leadership continue to inspire millions of people around the world. As the final prophet, Muhammad’s mission was to bring the complete and final message of Islam to humanity, and his legacy lives on through the Quran and the Hadith (sayings and actions of the Prophet).</p>
-                <p>Prophet Muhammad’s teachings emphasize the importance of faith, compassion, justice, and humility. His life serves as a guide for Muslims in all aspects of life, from personal conduct to social and political matters. He is remembered as the greatest of all prophets and the most beloved of Allah’s messengers.</p>`
+            adam: "Prophet Adam is considered the first human being and the first prophet...",
+            ibrahim: "Prophet Ibrahim is known for his unwavering faith and submission...",
+            musa: "Prophet Musa, also known as Moses, led the Israelites out of Egypt...",
+            isa: "Prophet Isa, known as Jesus in the Christian tradition, performed many miracles...",
+            muhammad: "Prophet Muhammad is the final messenger, the seal of the Prophets..."
         };
 
         // Display prophet details
         document.querySelectorAll('.prophet-btn').forEach(button => {
             button.addEventListener('click', () => {
                 const prophet = button.getAttribute('data-prophet');
-                prophetDetails.innerHTML = prophets[prophet];
+                prophetDetails.innerHTML = `<h2>${button.textContent}</h2><p>${prophets[prophet]}</p>`;
                 prophetDetails.style.display = 'block';
             });
         });
+
     </script>
 </body>
 </html>
